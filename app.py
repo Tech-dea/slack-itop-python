@@ -237,18 +237,6 @@ def raise_ticket(ack, event, logger):
     # Assign title to the message
     if 'slack' in message.lower() or 'Slack' in message:
         title = 'Slack issue'
-    elif 'upload' in message or 'zoom.us' in message:
-        title = 'Upload Consultation'
-    elif 'Shadowsocks' in message.lower() or 'shadowsocks' in message or 'cannot connect to IPS' in message:
-        title = 'Shadowsocks issue'
-    elif 'account' in message or 'disabled' in message:
-        title = 'Google account disabled'
-    elif 'magic link' in message.lower() or 'update email' in message.lower() or 'change the email id' in message.lower():
-        title = 'Expert / client email ID change request'
-    elif 'TnC' in message or 'renew' in message:
-        title = 'TnC Issues'
-    elif 'hourly rate' in message:
-        title = 'Financial rate change request'
     else:
         title = ''
 
