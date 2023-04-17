@@ -1,0 +1,68 @@
+{
+    "display_information": {
+        "name": "XXX Ticketing System",
+        "description": "Ticketing can be fun",
+        "background_color": "#5000ff"
+    },
+    "features": {
+        "app_home": {
+            "home_tab_enabled": false,
+            "messages_tab_enabled": true,
+            "messages_tab_read_only_enabled": true
+        },
+        "bot_user": {
+            "display_name": "XXX Ticketing System",
+            "always_online": true
+        },
+        "slash_commands": [
+            {
+                "command": "/store-user-info",
+                "url": "http://xxx.xxx.xxx.xxx:3000/slack/events",
+                "description": "First time store user info to DB",
+                "should_escape": false
+            },
+            {
+                "command": "/update-user-info",
+                "url": "http://xxx.xxx.xxx.xxx:3000/slack/events",
+                "description": "Update User info to DB",
+                "should_escape": false
+            }
+        ]
+    },
+    "oauth_config": {
+        "scopes": {
+            "user": [
+                "usergroups:write"
+            ],
+            "bot": [
+                "app_mentions:read",
+                "channels:history",
+                "chat:write",
+                "chat:write.customize",
+                "commands",
+                "files:read",
+                "groups:history",
+                "incoming-webhook",
+                "links:read",
+                "reactions:read",
+                "reactions:write",
+                "usergroups:read",
+                "users.profile:read",
+                "users:read",
+                "users:read.email"
+            ]
+        }
+    },
+    "settings": {
+        "event_subscriptions": {
+            "request_url": "http://xxx.xxx.xxx.xxx:3000/slack/events",
+            "bot_events": [
+                "app_mention",
+                "reaction_added"
+            ]
+        },
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": false,
+        "token_rotation_enabled": false
+    }
+}
