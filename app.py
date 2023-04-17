@@ -167,7 +167,7 @@ def send_conversation_to_itop(conversation, ticket_number):
             #user = message['user']
     
             # Format the data for itop API
-            url = os.getenv('ITOP_BETA_API_ENDPOINT')
+            url = os.getenv('ITOP_API_ENDPOINT')
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Basic ' + str(os.getenv('BASIC_AUTHENTICATION'))
@@ -275,7 +275,7 @@ def raise_ticket(ack, event, logger):
     description = html.escape(description)
 
     # iTop parameter for creating the ticket
-    url = os.getenv('ITOP_BETA_API_ENDPOINT')
+    url = os.getenv('ITOP_API_ENDPOINT')
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Authorization': 'Basic ' + str(os.getenv('BASIC_AUTHENTICATION'))
